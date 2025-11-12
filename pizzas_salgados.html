@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizzas - Pizzaria Bella Napoli</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      /* Fundo com imagem de pizza */
+      background-image: url('aprenda-a-fazer-pizza-em-casa-com-20-receitas-diferentes.avif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: fundoZoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes fundoZoom {
+      0% { background-size: 100%; }
+      100% { background-size: 110%; }
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 50px 0;
+      min-height: 100vh;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      animation: subir 1.5s ease-out;
+    }
+
+    @keyframes subir {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      color: #c00;
+      margin-bottom: 40px;
+      animation: pulsar 2s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% { text-shadow: 0 0 10px #c00; }
+      50% { text-shadow: 0 0 20px #ff4444; }
+    }
+
+    .pizza {
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .pizza img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      animation: flutuar 4s ease-in-out infinite, brilho 3s ease-in-out infinite;
+      transition: transform 0.4s ease;
+    }
+
+    .pizza img:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes brilho {
+      0%, 100% { box-shadow: 0 0 10px #c00; }
+      50% { box-shadow: 0 0 20px #ff4444; }
+    }
+
+    .pizza h2 {
+      color: #c00;
+      margin: 10px 0;
+    }
+
+    .pizza p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #000;
+    }
+
+    .preco {
+      font-weight: bold;
+      color: #c00;
+      font-size: 18px;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #fff0f0;
+      animation: destaque 3s infinite;
+    }
+
+    @keyframes destaque {
+      0%, 100% { transform: scale(1); background-color: #fff0f0; }
+      50% { transform: scale(1.1); background-color: #ffe0e0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Pizzas Salgadas da Pizzaria Bella Napoli</h1>
+
+      <div class="pizza">
+        <img src="pizza-margherita-receita.avif" alt="Pizza Margherita">
+        <h2>Pizza Margherita</h2>
+        <p>Molho de tomate, mussarela fresca e manjericão.</p>
+        <p class="preco">R$ 35,00</p>
+      </div>
+
+      <div class="pizza">
+        <img src="pizza_calabresa_e_mussarela_4389_600.jpg" alt="Pizza Calabresa">
+        <h2>Pizza Calabresa</h2>
+        <p>Calabresa fatiada, cebola e azeitonas.</p>
+        <p class="preco">R$ 38,00</p>
+      </div>
+
+      <div class="pizza">
+        <img src="images (2).jfif" alt="Pizza Quatro Queijos">
+        <h2>Pizza Quatro Queijos</h2>
+        <p>Mussarela, gorgonzola, parmesão e provolone.</p>
+        <p class="preco">R$ 42,00</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

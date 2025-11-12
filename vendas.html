@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vendas - Pizzaria Bella Napoli</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #000;
+      background-image: url('pizza-slice-felted-floating-cartoon-vector-icon-ilustracao-icon-objeto-alimentar-vector-plano-isolado_138676-10422 (1).avif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: fundoZoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes fundoZoom {
+      0% { background-size: 100%; }
+      100% { background-size: 110%; }
+    }
+
+    .overlay {
+      min-height: 100vh;
+      padding: 50px 0;
+      background-color: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      text-align: center;
+      animation: subir 1.5s ease-out;
+    }
+
+    @keyframes subir {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      color: #c00;
+      margin-bottom: 30px;
+      animation: pulsar 2s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% { text-shadow: 0 0 10px #c00; }
+      50% { text-shadow: 0 0 20px #ff4444; }
+    }
+
+    .produto {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .produto img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+      margin-right: 15px;
+      object-fit: cover;
+      animation: flutuar 4s ease-in-out infinite, brilho 3s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes brilho {
+      0%, 100% { box-shadow: 0 0 8px #c00; }
+      50% { box-shadow: 0 0 15px #ff4444; }
+    }
+
+    .produto span {
+      flex: 1;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .produto button {
+      padding: 6px 12px;
+      background-color: #c00;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .produto button:hover {
+      background-color: #900;
+      transform: scale(1.1);
+    }
+
+    .total {
+      text-align: right;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #c00;
+      animation: destaque 3s infinite;
+    }
+
+    @keyframes destaque {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .finalizar {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      background-color: #c00;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .finalizar:hover {
+      background-color: #900;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Painel de Vendas</h1>
+
+      <div class="produto">
+        <img src="pizza_calabresa_e_mussarela_4389_600.jpg" alt="Pizza Calabresa">
+        <span>Pizza Calabresa - R$ 39,90</span>
+        <button data-preco="39.90">Adicionar</button>
+      </div>
+
+      <div class="produto">
+        <img src="pizza-margherita-receita.avif" alt="Pizza Marguerita">
+        <span>Pizza Marguerita - R$ 42,90</span>
+        <button data-preco="42.90">Adicionar</button>
+      </div>
+
+      <div class="produto">
+        <img src="cachorro-pode-tomar-suco-de-laranja-topo.jpg" alt="Suco de Laranja">
+        <span>Suco de Laranja - R$ 8,00</span>
+        <button data-preco="8.00">Adicionar</button>
+      </div>
+
+      <div class="produto">
+        <img src="historia-logotipo-coca-cola.jpg" alt="Coca-Cola">
+        <span>Coca-Cola (350ml) - R$ 6,00</span>
+        <button data-preco="6.00">Adicionar</button>
+      </div>
+
+      <div class="produto">
+        <img src="IMG_1822.webp" alt="Água com Gás">
+        <span>Água com Gás - R$ 4,00</span>
+        <button data-preco="4.00">Adicionar</button>
+      </div>
+
+      <div class="total" id="total">Total: R$ 0,00</div>
+
+      <button class="finalizar" id="finalizar">Finalizar Venda</button>
+    </div>
+  </div>
+
+  <script>
+    let total = 0;
+    const botoes = document.querySelectorAll('.produto button');
+    const totalDiv = document.getElementById('total');
+    const finalizarBtn = document.getElementById('finalizar');
+
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        const preco = parseFloat(botao.getAttribute('data-preco'));
+        total += preco;
+        totalDiv.textContent = "Total: R$ " + total.toFixed(2).replace('.', ',');
+      });
+    });
+
+    finalizarBtn.addEventListener('click', () => {
+      if (total > 0) {
+        alert("Venda finalizada! Total: R$ " + total.toFixed(2).replace('.', ','));
+        total = 0;
+        totalDiv.textContent = "Total: R$ 0,00";
+      } else {
+        alert("Nenhum item foi adicionado à venda.");
+      }
+    });
+  </script>
+</body>
+</html>

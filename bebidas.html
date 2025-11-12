@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Bebidas - Pizzaria Bella Napoli</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      /* Fundo com imagem de pizza */
+      background-image: url('images (4).jfif');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: fundoZoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes fundoZoom {
+      0% { background-size: 100%; }
+      100% { background-size: 110%; }
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 50px 0;
+      min-height: 100vh;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      animation: subir 1.5s ease-out;
+    }
+
+    @keyframes subir {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      color: #c00;
+      margin-bottom: 40px;
+      animation: pulsar 2s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% { text-shadow: 0 0 10px #c00; }
+      50% { text-shadow: 0 0 20px #ff4444; }
+    }
+
+    .bebida {
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .bebida img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      animation: flutuar 4s ease-in-out infinite, brilho 3s ease-in-out infinite;
+      transition: transform 0.4s ease;
+    }
+
+    .bebida img:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes brilho {
+      0%, 100% { box-shadow: 0 0 10px #c00; }
+      50% { box-shadow: 0 0 20px #ff4444; }
+    }
+
+    .bebida h2 {
+      color: #c00;
+      margin: 10px 0;
+    }
+
+    .bebida p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #000;
+    }
+
+    .preco {
+      font-weight: bold;
+      color: #c00;
+      font-size: 18px;
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #fff0f0;
+      animation: destaque 3s infinite;
+    }
+
+    @keyframes destaque {
+      0%, 100% { transform: scale(1); background-color: #fff0f0; }
+      50% { transform: scale(1.1); background-color: #ffe0e0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Bebidas da Pizzaria Bella Napoli</h1>
+
+      <div class="bebida">
+        <img src="historia-logotipo-coca-cola.jpg" alt="Coca-Cola">
+        <h2>Coca-Cola (350ml)</h2>
+        <p>Refrigerante tradicional, servido gelado.</p>
+        <p class="preco">R$ 6,00</p>
+      </div>
+
+      <div class="bebida">
+        <img src="cachorro-pode-tomar-suco-de-laranja-topo.jpg" alt="Suco de Laranja">
+        <h2>Suco Natural de Laranja</h2>
+        <p>Feito na hora, sem adição de açúcar.</p>
+        <p class="preco">R$ 8,00</p>
+      </div>
+
+      <div class="bebida">
+        <img src="IMG_1822.webp" alt="Água com Gás">
+        <h2>Água com Gás</h2>
+        <p>Refrescante e leve, ideal para acompanhar pizzas.</p>
+        <p class="preco">R$ 4,00</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

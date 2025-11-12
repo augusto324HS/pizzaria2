@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Poções - Pizzaria Bella Napoli</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #000000;
+      /* Fundo com imagem temática de poções */
+      background-image: url('porcoes-exageradas-podem-levar-a-obesidade-Gourmet-Jr_1170x600_acf_cropped-740x370-1.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: fundoZoom 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes fundoZoom {
+      0% { background-size: 100%; }
+      100% { background-size: 110%; }
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 50px 0;
+      min-height: 100vh;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      animation: subir 1.5s ease-out;
+    }
+
+    @keyframes subir {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      color: rgb(255, 0, 0);
+      margin-bottom: 40px;
+      animation: pulsar 2s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% { text-shadow: 0 0 10px #c00; }
+      50% { text-shadow: 0 0 20px #ff4444; }
+    }
+
+    .porcao, .pocao {
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .porcao img, .pocao img {
+      width: 250px;   /* tamanho fixo para todas */
+      height: 180px;  /* altura proporcional */
+      border-radius: 10px;
+      object-fit: cover;
+      animation: flutuar 4s ease-in-out infinite, brilho 3s ease-in-out infinite, girar 6s linear infinite alternate;
+    }
+
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes brilho {
+      0%, 100% { box-shadow: 0 0 10px #c00; }
+      50% { box-shadow: 0 0 20px #000000; }
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(3deg); }
+    }
+
+    .porcao h2, .pocao h2 {
+      color: rgb(0, 0, 0);
+      margin: 10px 0;
+    }
+
+    .porcao p, .pocao p {
+      font-size: 14px;
+      margin: 5px 0;
+      color: #000000;
+    }
+
+    .preco {
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Poções da Pizzaria Bella Napoli</h1>
+
+      <div class="porcao">
+        <img src="10217355.jpg" alt="Porção de Batata Frita">
+        <h2>Porção de Batata Frita</h2>
+        <p>Uma batata boa e gostosa para toda família.</p>
+        <p class="preco">R$ 12,00</p>
+      </div>
+
+      <div class="porcao">
+        <img src="hq720.jpg" alt="Porção de Frango com Limão">
+        <h2>Porção de Frango com Limão</h2>
+        <p>Um frango gostoso e saboroso para toda família.</p>
+        <p class="preco">R$ 15,00</p>
+      </div>
+
+      <div class="pocao">
+        <img src="iscas-de-peixe.jpg" alt="Porção de Peixe">
+        <h2>Porção de Peixe</h2>
+        <p>Peixe direto do mar para alegrar seu dia.</p>
+        <p class="preco">R$ 14,00</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

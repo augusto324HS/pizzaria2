@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizzaria Bella Napoli</title>
+  <style>
+    body {
+      background-color: black;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 50px 0;
+    }
+
+    .logo img {
+      max-width: 400px;
+      border: 5px solid #c00;
+      border-radius: 10px;
+      animation: flutuar 3s ease-in-out infinite, brilho 2s ease-in-out infinite;
+    }
+
+    @keyframes flutuar {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes brilho {
+      0%, 100% {
+        box-shadow: 0 0 10px #c00;
+      }
+      50% {
+        box-shadow: 0 0 20px #ff4444;
+      }
+    }
+
+    .login-btn {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background-color: #c00;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #900;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="logo">
+      <img src="pizza-slice-felted-floating-cartoon-vector-icon-ilustracao-icon-objeto-alimentar-vector-plano-isolado_138676-10422 (1).avif" alt="Logo da Pizzaria Bella Napoli">
+      <h1 style="color: #fff;">Pizzaria Bella Napoli</h1>
+    </div>
+
+    <!-- Botão agora leva para cadastro_cliente.html -->
+    <button class="login-btn" onclick="window.location.href='cadastro_cliente.html'">Cadastro de Cliente</button>
+  </div>
+</body>
+</html>
